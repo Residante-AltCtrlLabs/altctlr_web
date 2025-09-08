@@ -6,11 +6,13 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center  px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         {/* Main Headline */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white mb-8 leading-tight">
-          <div className="font-light w-[58%] text-[32px] border border-red-600">
-            The Future of
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl  text-white mb-8 leading-tight">
+          <div className="w-[82%] text-[32px]  ">The Future of</div>
+          <div className=" text-[57px] mt-3  ">Communications</div>
+          <div className="font-light  text-[57px] relative right-8">
+            {" "}
+            & Collaborations.
           </div>
-          <div className="font-light mt-3">Communications & Collaborations</div>
         </h1>
 
         {/* Sub-headline */}

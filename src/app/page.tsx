@@ -12,7 +12,7 @@ export default function Home() {
           src="/images/city-bg.png"
           alt="City background"
           fill
-          className="object-cover"
+          className="object-cover brightness-[0.7] contrast-125"
           priority
         />
         {/* Dark overlay for better text readability */}

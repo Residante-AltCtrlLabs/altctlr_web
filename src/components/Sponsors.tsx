@@ -1,7 +1,6 @@
 "use client";
-
 import { useEffect, useState } from "react";
-
+import { Carousel } from "primereact/carousel";
 const Sponsors = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -25,6 +24,22 @@ const Sponsors = () => {
   // Duplicate the array for seamless loop
   const duplicatedSponsors = [...sponsors, ...sponsors];
 
+  // Define the sponsor item template for the carousel
+  const itemTemplate = (sponsor: any) => {
+    return (
+      <div className="flex-shrink-0 mx-8 flex items-center justify-center">
+        <div className="text-white/60 hover:text-white transition-colors duration-300 group">
+          <div className="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">
+            {sponsor.logo}
+          </div>
+          <div className="text-sm font-medium text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {sponsor.name}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <section className="relative py-16 overflow-hidden">
       <div className="relative z-10">
@@ -35,25 +50,28 @@ const Sponsors = () => {
           </p>
         </div>
 
-        {/* Sliding Logos Container */}
+        {/* PrimeReact Carousel */}
         <div className="relative">
-          <div className="flex animate-slide">
-            {duplicatedSponsors.map((sponsor, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 mx-8 flex items-center justify-center"
-              >
-                <div className="text-white/60 hover:text-white transition-colors duration-300 group">
-                  <div className="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">
-                    {sponsor.logo}
-                  </div>
-                  <div className="text-sm font-medium text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {sponsor.name}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Carousel
+            value={duplicatedSponsors}
+            itemTemplate={itemTemplate}
+            numVisible={5}
+            numScroll={1}
+            circular={true}
+            autoplayInterval={3500}
+            responsiveOptions={[
+              {
+                breakpoint: "1024px",
+                numVisible: 3,
+                numScroll: 1,
+              },
+              {
+                breakpoint: "600px",
+                numVisible: 1,
+                numScroll: 1,
+              },
+            ]}
+          />
         </div>
 
         {/* Fade edges for smooth effect */}
