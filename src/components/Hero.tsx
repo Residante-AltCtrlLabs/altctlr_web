@@ -4,11 +4,13 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center  px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         {/* Main Headline */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white mb-8 leading-tight">
-          <div className="font-light">The Future of</div>
-          <div className="font-light">Communications & Collaborations</div>
+          <div className="font-light w-[58%] text-[32px] border border-red-600">
+            The Future of
+          </div>
+          <div className="font-light mt-3">Communications & Collaborations</div>
         </h1>
 
         {/* Sub-headline */}
