@@ -1,14 +1,95 @@
 "use client";
 
+import { useMemo, useState } from "react";
+import { Carousel } from "primereact/carousel";
 import { Button } from "primereact/button";
 
 const EngineSection = () => {
+  // --- Base items (same as your list) ---
+  const base = [
+    {
+      icon: "pi pi-sitemap",
+      title: "Workflow Automation",
+      desc: "Tasks created and routed automatically — no manual chasing.",
+    }, // hero (idx 0)
+    { icon: "pi pi-calendar", title: "AI Auto-Scheduling" },
+    { icon: "pi pi-chart-line", title: "Lead Scoring Engine" },
+    { icon: "pi pi-share-alt", title: "Multi-Channel Engagement" },
+    { icon: "pi pi-chart-bar", title: "Analytics That Prove ROI" },
+    { icon: "pi pi-share-alt", title: "Multi-Channel Engagement" },
+    { icon: "pi pi-share-alt", title: "Multi-Channel Engagement" },
+    { icon: "pi pi-share-alt", title: "Multi-Channel Engagement" },
+    { icon: "pi pi-share-alt", title: "Multi-Channel Engagement" },
+    { icon: "pi pi-share-alt", title: "Multi-Channel Engagement" },
+  ];
+
+  // idx inject so we can style first item via idx
+  const items = base.map((it, idx) => ({ ...it, idx }));
+
+  // --- Fixed carousel config ---
+  const numVisible = 5;
+  const numScroll = 1;
+  const circular = false;
+
+  const [page, setPage] = useState(0);
+
+  const totalPages = useMemo(() => {
+    const N = items.length;
+    if (N <= numVisible) return 1;
+    return Math.floor(Math.max(0, N - numVisible) / numScroll) + 1;
+  }, [items.length, numVisible, numScroll]);
+
+  const goPrev = () =>
+    setPage((p) =>
+      circular ? (p - 1 + totalPages) % totalPages : Math.max(p - 1, 0)
+    );
+  const goNext = () =>
+    setPage((p) =>
+      circular ? (p + 1) % totalPages : Math.min(p + 1, totalPages - 1)
+    );
+
+  const itemTemplate = (it: any) => {
+    const isHero = it.idx === 0;
+
+    if (isHero) {
+      return (
+        <div className="px-2 ">
+          <div className="bg-white text-[#0f172a] pt-12 pb-12  h-[287px] w-[578px] rounded-3xl shadow-2xl">
+            <div className="px-6 pt-6  h-full  flex flex-col justify-between ">
+              <div className="text-xl mb-5">
+                <i className={it.icon}></i>
+              </div>
+              <div className="space-y-4">
+                <p className="text-sm opacity-80">{it.desc}</p>
+
+                <h3 className="font-bold text-xl">{it.title}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div className="px-2 mt-20">
+        <div className="bg-[#F0F0F04D] text-white h-52 w-64 flex flex-col gap-y-4 rounded-lg shadow-lg">
+          <div className="px-6 pt-10">
+            <div className="text-4xl mb-4 rounded-xl">
+              <i className={it.icon}></i>
+            </div>
+            <h3 className="font-bold leading-tight">{it.title}</h3>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div
-      className="relative w-[84%]  rounded-lg mx-auto bg-cover bg-center"
+      className="relative w-[84%] rounded-lg mx-auto bg-cover bg-center"
       style={{ backgroundImage: 'url("/images/secbg.png")' }}
     >
-      <div className="relative z-10 text-white p-16 flex flex-col justify-center h-full">
+      <div className="relative z-10 text-white p-16 pt-24 flex flex-col justify-center h-full">
         {/* Heading */}
         <h1 className="text-5xl font-bold leading-tight">
           Seamless by Design.
@@ -19,74 +100,36 @@ const EngineSection = () => {
           Every real estate workflow, connected and automated without gaps.
         </p>
 
-        {/* Cards section */}
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
-
-          <div className="bg-[#F0F0F04D] text-white   flex flex-col gap-y-4 h-48 rounded-lg shadow-lg">
-            <div className="px-6 pt-6">
-              <div className="text-4xl mb-4 rounded-md ">
-                <i className="pi pi-calendar"></i>
-              </div>
-              <h3 className="font-bold  w-[80%]">AI Auto-Scheduling</h3>
-            </div>
-          </div>
-
-          <div className="bg-[#F0F0F04D] text-white  h-48 flex flex-col gap-y-4 rounded-lg shadow-lg text-center">
-                       <div className="px-6 pt-6">
-            <div className="text-4xl mb-4 rounded-md">
-              <i className="pi pi-chart-line"></i>
-            </div>
-            <h3 className="font-bold">Lead Scoring Engine</h3>
-          </div>
-</div>
-          <div className="bg-[#F0F0F04D] text-white  h-48 flex flex-col gap-y-4 rounded-lg shadow-lg text-center">
-           <div className="px-6 pt-6">
-            <div className="text-4xl mb-4 rounded-md">
-              <i className="pi pi-share-alt"></i>
-            </div>
-            <h3 className="font-bold">Multi-Channel Engagement</h3>
-          </div>
-          </div>
-
-           <div className="bg-[#F0F0F04D] text-white  h-48 flex flex-col gap-y-4 rounded-lg shadow-lg text-center">
-           <div className="px-6 pt-6">
-            <div className="text-4xl mb-4 rounded-md">
-              <i className="pi pi-share-alt"></i>
-            </div>
-            <h3 className="font-bold">Multi-Channel Engagement</h3>
-          </div>
-          
-          </div>
-
-            <div className="bg-[#F0F0F04D] text-white  h-48 flex flex-col gap-y-4 rounded-lg shadow-lg text-center">
-           <div className="px-6 pt-6">
-            <div className="text-4xl mb-4 rounded-md">
-              <i className="pi pi-share-alt"></i>
-            </div>
-            <h3 className="font-bold">Multi-Channel Engagement</h3>
-          </div>
-          
-          </div>
-
-            <div className="bg-[#F0F0F04D] text-white  h-48 flex flex-col gap-y-4 rounded-lg shadow-lg text-center">
-           <div className="px-6 pt-6">
-            <div className="text-4xl mb-4 rounded-md">
-              <i className="pi pi-share-alt"></i>
-            </div>
-            <h3 className="font-bold">Multi-Channel Engagement</h3>
-          </div>
-          
-          </div>
-        
-</div>
-        {/* Bottom Button */}
-        {/* <div className="mt-12 flex justify-center">
-          <Button
-            label="Explore More"
-            icon="pi pi-arrow-right"
-            className="p-button-rounded p-button-text"
+        {/* Carousel */}
+        <div className="mt-12">
+          <Carousel
+            value={items}
+            itemTemplate={itemTemplate}
+            numVisible={numVisible}
+            numScroll={numScroll}
+            circular={circular}
+            page={page}
+            onPageChange={(e) => setPage(e.page)}
+            showNavigators={false}
+            showIndicators={false}
           />
-        </div> */}
+        </div>
+
+        {/* External buttons (bottom-right) */}
+        <div className="mt-4 flex justify-end gap-3">
+          <Button
+            onClick={goPrev}
+            icon="pi pi-arrow-left"
+            className="bg-white text-black py-2"
+            disabled={totalPages <= 1}
+          />
+          <Button
+            onClick={goNext}
+            icon="pi pi-arrow-right"
+            className="bg-white text-black py-2"
+            disabled={totalPages <= 1}
+          />
+        </div>
       </div>
     </div>
   );

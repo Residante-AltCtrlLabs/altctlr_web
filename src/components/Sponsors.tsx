@@ -59,6 +59,7 @@ const Sponsors = () => {
             numScroll={1}
             circular={true}
             autoplayInterval={3500}
+             showNavigators={false}    
             responsiveOptions={[
               {
                 breakpoint: "1024px",
