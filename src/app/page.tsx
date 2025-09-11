@@ -4,6 +4,7 @@ import Sponsors from "@/components/Sponsors";
 import Image from "next/image";
 import EngineSection from "@/components/EngineSection";
 import SystemSection from "@/components/SystemSection";
+import PerformanceSection from "@/components/PerformanceSection";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       </main>
       <EngineSection />
       <SystemSection />
+      <PerformanceSection />
     </>
   );
 }
