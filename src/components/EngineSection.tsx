@@ -85,53 +85,80 @@ const EngineSection = () => {
   };
 
   return (
-    <div
-      className="relative w-[84%] rounded-lg mx-auto bg-cover bg-center"
-      style={{ backgroundImage: 'url("/images/secbg.png")' }}
-    >
-      <div className="relative z-10 text-white p-16 pt-24 flex flex-col justify-center h-full">
-        {/* Heading */}
-        <h1 className="text-5xl font-bold leading-tight">
-          Seamless by Design.
-        </h1>
-
-        {/* Description */}
-        <p className="mt-4 text-xl">
-          Every real estate workflow, connected and automated without gaps.
-        </p>
-
-        {/* Carousel */}
-        <div className="mt-12">
-          <Carousel
-            value={items}
-            itemTemplate={itemTemplate}
-            numVisible={numVisible}
-            numScroll={numScroll}
-            circular={circular}
-            page={page}
-            onPageChange={(e) => setPage(e.page)}
-            showNavigators={false}
-            showIndicators={false}
-          />
+    <section className="w-full">
+      {/* Top heading block */}
+      <div className="w-full flex flex-col items-center text-center text-white pt-36 pb-20">
+        <div className="mb-6">
+          <span className="uppercase tracking-widest text-[10px] px-3 py-1 rounded-full border border-white/20 bg-white/5">
+            Platform
+          </span>
         </div>
+        <div className="leading-tight">
+          <div className="text-[40px] sm:text-[48px] md:text-[56px] font-semibold">
+            The Invisible Engine.
+          </div>
+          <div className="mt-2 text-[34px] sm:text-[40px] md:text-[46px] font-serif italic font-normal">
+            Behind Every Deal.
+          </div>
+        </div>
+        <p className="mt-6 text-sm sm:text-base text-white/80 max-w-2xl">
+          More than features — the ecosystem powering real estate, end-to-end,
+          without gaps.
+        </p>
+      </div>
 
-        {/* External buttons (bottom-right) */}
-        <div className="mt-4 flex justify-end gap-3">
-          <Button
-            onClick={goPrev}
-            icon="pi pi-arrow-left"
-            className="bg-white text-black py-2"
-            disabled={totalPages <= 1}
-          />
-          <Button
-            onClick={goNext}
-            icon="pi pi-arrow-right"
-            className="bg-white text-black py-2"
-            disabled={totalPages <= 1}
-          />
+      {/* Image/slider block */}
+      <div className="relative w-[84%] rounded-lg mx-auto overflow-hidden">
+        {/* Background image with reduced opacity */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url("/images/secbg.png")', opacity: 0.35 }}
+        />
+
+        <div className="relative z-10 text-white p-16 pt-24 flex flex-col justify-center h-full">
+          {/* Heading */}
+          <h1 className="text-5xl font-bold leading-tight">
+            Seamless by Design.
+          </h1>
+
+          {/* Description */}
+          <p className="mt-4 text-xl">
+            Every real estate workflow, connected and automated without gaps.
+          </p>
+
+          {/* Carousel */}
+          <div className="mt-12">
+            <Carousel
+              value={items}
+              itemTemplate={itemTemplate}
+              numVisible={numVisible}
+              numScroll={numScroll}
+              circular={circular}
+              page={page}
+              onPageChange={(e) => setPage(e.page)}
+              showNavigators={false}
+              showIndicators={false}
+            />
+          </div>
+
+          {/* External buttons (bottom-right) */}
+          <div className="mt-4 flex justify-end gap-3">
+            <Button
+              onClick={goPrev}
+              icon="pi pi-arrow-left"
+              className="bg-white text-black py-2"
+              disabled={totalPages <= 1}
+            />
+            <Button
+              onClick={goNext}
+              icon="pi pi-arrow-right"
+              className="bg-white text-black py-2"
+              disabled={totalPages <= 1}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
