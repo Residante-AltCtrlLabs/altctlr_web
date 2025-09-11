@@ -5,6 +5,8 @@ import Image from "next/image";
 import EngineSection from "@/components/EngineSection";
 import SystemSection from "@/components/SystemSection";
 import PerformanceSection from "@/components/PerformanceSection";
+import FrictionSection from "@/components/FrictionSection";
+import QuestionSection from "@/components/QuestionSection";
 
 export default function Home() {
   return (
@@ -33,6 +35,8 @@ export default function Home() {
       <EngineSection />
       <SystemSection />
       <PerformanceSection />
+      <FrictionSection />
+      <QuestionSection />
     </>
   );
 }
