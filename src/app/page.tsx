@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Sponsors from "@/components/Sponsors";
 import Image from "next/image";
 import EngineSection from "@/components/EngineSection";
+import SystemSection from "@/components/SystemSection";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
         </div>
       </main>
       <EngineSection />
+      <SystemSection />
     </>
   );
 }
