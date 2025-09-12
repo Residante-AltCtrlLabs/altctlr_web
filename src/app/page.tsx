@@ -9,6 +9,9 @@ import IndustrySection from "@/components/IndustrySection";
 import BackedBySection from "@/components/BackedBySection";
 import FrictionSection from "@/components/FrictionSection";
 import QuestionSection from "@/components/QuestionSection";
+import TrustSection from "@/components/TrustSection";
+import CTASection from "@/components/CTASection";
+import SubscribeSection from "@/components/SubscribeSection";
 
 export default function Home() {
   return (
@@ -41,7 +44,10 @@ export default function Home() {
       <FrictionSection />
       <IndustrySection />
       <BackedBySection />
-      <QuestionSection/>
+      <QuestionSection />
+      <TrustSection />
+      <CTASection />
+      <SubscribeSection />
     </>
   );
 }
