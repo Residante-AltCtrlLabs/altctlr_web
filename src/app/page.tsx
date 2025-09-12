@@ -5,8 +5,9 @@ import Image from "next/image";
 import EngineSection from "@/components/EngineSection";
 import SystemSection from "@/components/SystemSection";
 import PerformanceSection from "@/components/PerformanceSection";
+import IndustrySection from "@/components/IndustrySection";
+import BackedBySection from "@/components/BackedBySection";
 import FrictionSection from "@/components/FrictionSection";
-import QuestionSection from "@/components/QuestionSection";
 
 export default function Home() {
   return (
@@ -19,7 +20,8 @@ export default function Home() {
             alt="City background"
             fill
             className="object-cover  brightness-[0.7] contrast-125"
-            // priority
+            priority
+            unoptimized
           />
           {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-black/30"></div>
@@ -36,7 +38,8 @@ export default function Home() {
       <SystemSection />
       <PerformanceSection />
       <FrictionSection />
-      <QuestionSection />
+      <IndustrySection />
+      <BackedBySection />
     </>
   );
 }
