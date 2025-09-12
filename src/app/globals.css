@@ -1,8 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+/* Import PrimeReact styles first */
+@import 'primereact/resources/themes/lara-light-indigo/theme.css';
+@import 'primereact/resources/primereact.min.css';
+@import 'primeicons/primeicons.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
 :root {
   --foreground-rgb: 255, 255, 255;
@@ -10,10 +15,15 @@
   --background-end-rgb: 0, 0, 0;
 }
 
-* {
+/* More specific reset that won't interfere with PrimeReact */
+html, body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 html,
@@ -60,4 +70,58 @@ a {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #6a6a6a;
+}
+
+/* PrimeReact component overrides to ensure proper styling */
+.p-button {
+  font-family: inherit !important;
+}
+
+.p-accordion .p-accordion-header .p-accordion-header-link {
+  font-family: inherit !important;
+  padding: 1rem !important;
+  border: 1px solid #dee2e6 !important;
+  background: #ffffff !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  border-radius: 8px !important;
+  margin-bottom: 8px !important;
+}
+
+/* Move arrow to right side */
+.p-accordion .p-accordion-header .p-accordion-header-link {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* Hide the default left arrow */
+.p-accordion .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon {
+  display: none !important;
+}
+
+/* Add custom right arrow */
+.p-accordion .p-accordion-header .p-accordion-header-link::after {
+  content: "▼" !important;
+  order: 2 !important;
+  margin-left: auto !important;
+  color: #000000 !important;
+  font-size: 12px !important;
+  transition: transform 0.3s ease !important;
+}
+
+/* Rotate arrow when expanded */
+.p-accordion .p-accordion-header.p-highlight .p-accordion-header-link::after {
+  transform: rotate(180deg) !important;
+}
+
+.p-accordion .p-accordion-content {
+  padding: 1rem !important;
+  border: 1px solid #dee2e6 !important;
+  border-top: 0 !important;
+  background: #ffffff !important;
+  color: #495057 !important;
+  border-radius: 0 0 8px 8px !important;
+  margin-bottom: 8px !important;
 }
