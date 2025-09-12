@@ -12,6 +12,7 @@ import QuestionSection from "@/components/QuestionSection";
 import TrustSection from "@/components/TrustSection";
 import CTASection from "@/components/CTASection";
 import SubscribeSection from "@/components/SubscribeSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -48,6 +49,8 @@ export default function Home() {
       <TrustSection />
       <CTASection />
       <SubscribeSection />
+
+      <Footer />
     </>
   );
 }
