@@ -1,4 +1,5 @@
-import Navbar from "@/components/Navbar";
+"use client";
+
 import Hero from "@/components/Hero";
 import Sponsors from "@/components/Sponsors";
 import Image from "next/image";
@@ -12,19 +13,30 @@ import QuestionSection from "@/components/QuestionSection";
 import TrustSection from "@/components/TrustSection";
 import CTASection from "@/components/CTASection";
 import SubscribeSection from "@/components/SubscribeSection";
-import Footer from "@/components/Footer";
+import { useNavbar } from "@/contexts/NavbarContext";
+import { useEffect } from "react";
 
 export default function Home() {
+  const { setNavbarStyle } = useNavbar();
+
+  // Set navbar style for home page (transparent with white text)
+  useEffect(() => {
+    setNavbarStyle({
+      variant: "transparent",
+      textColor: "white",
+    });
+  }, [setNavbarStyle]);
+
   return (
     <>
-      <main className="relative">
-        {/* Global Background Image */}
-        <div className=" inset-0 z-0">
+      <main className="relative min-h-screen">
+        {/* Home Page Background Image */}
+        <div className="absolute inset-0 z-0">
           <Image
             src="/images/city-bg.png"
             alt="City background"
             fill
-            className="object-cover  brightness-[0.7] contrast-125"
+            className="object-cover brightness-[0.7] contrast-125"
             priority
             unoptimized
           />
@@ -34,7 +46,6 @@ export default function Home() {
 
         {/* Content */}
         <div className="relative z-10">
-          <Navbar />
           <Hero />
           <Sponsors />
         </div>
@@ -49,8 +60,6 @@ export default function Home() {
       <TrustSection />
       <CTASection />
       <SubscribeSection />
-
-      <Footer />
     </>
   );
 }

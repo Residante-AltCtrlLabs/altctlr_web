@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { PrimeReactProvider } from 'primereact/api';
+import { PrimeReactProvider } from "primereact/api";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { NavbarProvider } from "@/contexts/NavbarContext";
+
 export const metadata: Metadata = {
   title: "AltCtrl - The Future of Communications & Collaborations",
   description:
@@ -14,12 +18,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-   <body>
-        <PrimeReactProvider >
-          {children}
+      <body>
+        <PrimeReactProvider>
+          <NavbarProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </NavbarProvider>
         </PrimeReactProvider>
       </body>
     </html>
   );
-
 }
