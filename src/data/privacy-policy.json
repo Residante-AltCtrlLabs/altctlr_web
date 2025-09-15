@@ -1,0 +1,135 @@
+{
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "1. Introduction",
+      "description": "AltCtrl provides AI-powered CRM and real estate technology solutions across multiple countries. We comply with global privacy laws, including:",
+      "bullets": [
+        { "text": "UAE Federal Data Protection Law (PDPL)" },
+        { "text": "Automation tools for lead management, WhatsApp, SMS, and email." },
+        { "text": "Saudi Arabia Personal Data Protection Law (PDPL, 2023)" },
+        { "text": "Qatar Data Protection Law (Law No. 13 of 2016)" },
+        { "text": "Oman Personal Data Protection Law (2022)" },
+        { "text": "Morocco Law 09-08" },
+        { "text": "Turkey Personal Data Protection Law (KVKK)" },
+        { "text": "Georgia Law on Personal Data Protection" },
+        { "text": "Azerbaijan Law on Personal Data (2010)" },
+        { "text": "Singapore Personal Data Protection Act (PDPA)" },
+        { "text": "Malaysia Personal Data Protection Act (PDPA, 2010)" },
+        { "text": "Thailand Personal Data Protection Act (PDPA, 2022)" },
+        { "text": "Indonesia Personal Data Protection Law (UU PDP, 2022)" },
+        { "text": "European Union GDPR (where applicable)" },
+        { "text": "California CCPA/CPRA (where applicable)" }
+      ],
+      "note": "By using AltCtrl services, you consent to this Privacy Policy."
+    },
+    {
+      "id": "data-we-collect",
+      "title": "2. Data We Collect",
+      "description": "We may collect:",
+      "bullets": [
+        { "text": "Personal data: names, contact details, identity documents (if required by law)." },
+        { "text": "Business data: agency, developer, property/project information." },
+        { "text": "Customer data: inquiries, leads, WhatsApp communications." },
+        { "text": "Technical data: cookies, device info, geolocation (where permitted)." },
+        { "text": "Financial data: billing, transactions (processed via third-party gateways)." }
+      ],
+      "note": "In countries with stricter laws (e.g., Singapore PDPA, Saudi PDPL), explicit consent is required before collection."
+    },
+    {
+      "id": "how-we-use-data",
+      "title": "3. How We Use Data",
+      "bullets": [
+        { "text": "To deliver CRM and communication services." },
+        { "text": "To facilitate real estate listings and transactions." },
+        { "text": "To comply with national laws (e.g., Saudi & UAE require local storage of sensitive data)." },
+        { "text": "To improve AI models and automation (in anonymized form)." }
+      ],
+      "note": "In countries with stricter laws (e.g., Singapore PDPA, Saudi PDPL), explicit consent is required before collection."
+    },
+    {
+      "id": "legal-basis",
+      "title": "4. Legal Basis for Processing:",
+      "bullets": [
+        { "text": "Consent (Singapore, Malaysia, Thailand, Indonesia, Morocco)." },
+        { "text": "Contractual necessity (Saudi Arabia, Turkey, UAE, EU)." },
+        { "text": "Legitimate interest (Georgia, Azerbaijan, EU)." },
+        { "text": "Legal obligation (all listed jurisdictions)." }
+      ]
+    },
+    {
+      "id": "cross-border",
+      "title": "5. Cross-Border Transfers:",
+      "description": "Where data is transferred outside the country:",
+      "bullets": [
+        { "text": "GCC: stored locally if required (Saudi PDPL, UAE PDPL)." },
+        { "text": "EU & EU-aligned: transfers use Standard Contractual Clauses (SCCs)." },
+        { "text": "Asia: follows APEC Cross-Border Privacy Rules where applicable." }
+      ]
+    },
+    {
+      "id": "data-sharing",
+      "title": "6. Data Sharing:",
+      "description": "Data may be shared with:",
+      "bullets": [
+        { "text": "Meta Platforms (WhatsApp, Instagram, Facebook) for API services." },
+        { "text": "Local real estate agencies & developers (with user consent)." },
+        { "text": "Government regulators where required (e.g., Saudi, UAE, Turkey)." },
+        { "text": "Third-party processors (cloud, AI, payments) under strict contracts." }
+      ]
+    },
+    {
+      "id": "data-retention",
+      "title": "7. Data Retention",
+      "bullets": [
+        { "text": "Customer & lead data: retained only as long as needed for property transactions." },
+        { "text": "Business data: kept for regulatory compliance (tax, financial audits)." },
+        { "text": "Deletion: users may request deletion; in some countries (Saudi, UAE, Turkey), data must be deleted after purpose ends." }
+      ]
+    },
+    {
+      "id": "user-rights",
+      "title": "6. User Rights",
+      "description": "Depending on country law, users may:",
+      "bullets": [
+        { "text": "Meta Platforms (WhatsApp, Instagram, Facebook) for API services." },
+        { "text": "For Saudi users: governed by the Saudi Personal Data Protection Law (PDPL) and applicable Saudi regulations." },
+        { "text": "International users: governed by the laws of the UAE unless overridden by mandatory local law. Disputes resolved via arbitration under UAE law, unless otherwise required by local jurisdiction." }
+      ]
+    },
+    {
+      "id": "responsibilities-agencies-developers",
+      "title": "9. Responsibilities of Agencies & Developers:",
+      "bullets": [
+        { "text": "Must comply with local consent laws before uploading customer data." },
+        { "text": "Cannot export or misuse customer data across borders unlawfully." },
+        { "text": "Remain fully liable under local data protection regulators if misused." }
+      ]
+    },
+    {
+      "id": "security-measures",
+      "title": "10. Security Measures:",
+      "description": "Data may be shared with:",
+      "bullets": [
+        { "text": "Encryption in transit and storage." },
+        { "text": "Role-based access control." },
+        { "text": "Compliance with ISO 27001 standards." },
+        { "text": "Data localization in countries requiring it (e.g., Saudi Arabia, UAE)." }
+      ]
+    },
+    {
+      "id": "international-coverage-disclaimer",
+      "title": "11. International Coverage Disclaimer:",
+      "note": "Users acknowledge that laws vary across jurisdictions. AltCtrl aligns operations to the strictest applicable law in each market. In case of conflict between this Privacy Policy and national law, the stricter law prevails."
+    },
+    {
+      "id": "contact-us",
+      "title": "Contact Us",
+      "description": "For questions or legal matters, contact:",
+      "text": "Alternative Control Labs",
+      "contactEmail": "support@altctrl.ai"
+    }
+  ]
+}
+
+
