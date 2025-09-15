@@ -18,7 +18,7 @@ const Card = ({
 
 const Metric = ({ value, label }: { value: string; label: string }) => (
   <div className="flex items-end gap-3">
-    <div className="text-6xl md:text-7xl font-semibold tracking-tight">
+    <div className="text-4xl md:text-5xl font-semibold tracking-tight">
       {value}
     </div>
     <div className="uppercase text-xs tracking-widest mb-2 opacity-70">
