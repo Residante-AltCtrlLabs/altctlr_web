@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useNavbar } from "@/contexts/NavbarContext";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,153 +44,142 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Image
-              src={`${getNavbarClasses().includes("bg-white")?"/images/blacklogo.svg":"/images/logo.svg"}`}
-              alt="AltCtrl Logo"
-              width={120}
-              height={40}
-              className="h-10 w-auto"
-              priority
-            />
+            <Link href="/">
+              <Image
+                src={`${
+                  getNavbarClasses().includes("bg-white")
+                    ? "/images/blacklogo.svg"
+                    : "/images/logo.svg"
+                }`}
+                alt="AltCtrl Logo"
+                width={120}
+                height={40}
+                className="h-10 w-auto cursor-pointer"
+                priority
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <a
+              <Link
                 href="#platform"
                 className={`${getTextClasses()} px-3 py-2 text-sm font-medium transition-colors duration-200`}
               >
                 Platform
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#insights"
                 className={`${getTextClasses()} px-3 py-2 text-sm font-medium transition-colors duration-200`}
               >
                 Insights
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/about"
                 className={`${getTextClasses()} px-3 py-2 text-sm font-medium transition-colors duration-200`}
               >
                 About
-              </a>
+              </Link>
             </div>
           </div>
 
           {/* Sign In Button */}
           <div className="hidden md:block">
-            <button
-              className={`flex items-center space-x-2 ${getTextClasses()} transition-colors duration-200`}
+            <Link
+              href="#signin"
+              className={`${getTextClasses()} px-4 py-2 text-sm font-medium transition-colors duration-200`}
             >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                />
-              </svg>
-              <span className="text-sm font-medium">Sign In</span>
-            </button>
+              Sign In
+            </Link>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`${getTextClasses()} focus:outline-none`}
+              className={`${getTextClasses()} inline-flex items-center justify-center p-2 rounded-md transition-colors duration-200`}
+              aria-controls="mobile-menu"
+              aria-expanded="false"
             >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
+              <span className="sr-only">Open main menu</span>
+              {!isMenuOpen ? (
+                <svg
+                  className="block h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
                     d="M4 6h16M4 12h16M4 18h16"
                   />
-                )}
-              </svg>
+                </svg>
+              ) : (
+                <svg
+                  className="block h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              )}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div
-              className={`px-2 pt-2 pb-3 space-y-1 sm:px-3 ${
-                navbarStyle.variant === "transparent"
-                  ? "bg-black/90 backdrop-blur-sm"
-                  : "bg-white shadow-lg"
-              } rounded-lg mt-2`}
+        {/* Mobile menu */}
+        <div className={`md:hidden ${isMenuOpen ? "block" : "hidden"}`}>
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <Link
+              href="#platform"
+              className={`${getTextClasses()} block px-3 py-2 text-base font-medium transition-colors duration-200`}
+              onClick={() => setIsMenuOpen(false)}
             >
-              <a
-                href="#platform"
-                className={`${getTextClasses()} block px-3 py-2 text-base font-medium`}
-              >
-                Platform
-              </a>
-              <a
-                href="#insights"
-                className={`${getTextClasses()} block px-3 py-2 text-base font-medium`}
-              >
-                Insights
-              </a>
-              <a
-                href="/about"
-                className={`${getTextClasses()} block px-3 py-2 text-base font-medium`}
-              >
-                About
-              </a>
-              <div
-                className={`pt-4 pb-3 border-t ${
-                  navbarStyle.variant === "transparent"
-                    ? "border-white/10"
-                    : "border-gray-200"
-                }`}
-              >
-                <button
-                  className={`flex items-center space-x-2 ${getTextClasses()} px-3 py-2 text-base font-medium`}
-                >
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                    />
-                  </svg>
-                  <span>Sign In</span>
-                </button>
-              </div>
-            </div>
+              Platform
+            </Link>
+            <Link
+              href="#insights"
+              className={`${getTextClasses()} block px-3 py-2 text-base font-medium transition-colors duration-200`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Insights
+            </Link>
+            <Link
+              href="/about"
+              className={`${getTextClasses()} block px-3 py-2 text-base font-medium transition-colors duration-200`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link
+              href="/careers"
+              className={`${getTextClasses()} block px-3 py-2 text-base font-medium transition-colors duration-200`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Careers
+            </Link>
+            <Link
+              href="#signin"
+              className={`${getTextClasses()} block px-3 py-2 text-base font-medium transition-colors duration-200`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Sign In
+            </Link>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
