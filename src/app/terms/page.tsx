@@ -15,8 +15,8 @@ const TermsOfServicePage = () => {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-20">
         {/* Title */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4">
-          Terms Of Service
+        <h1 className="text-4xl md:text-5xl lg:text-6xl  text-black mb-4">
+         <span className="font-bold">Terms</span> <span className="font-light italic">Of Service</span>
         </h1>
 
         {/* Last Updated */}

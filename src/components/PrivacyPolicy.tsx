@@ -25,7 +25,7 @@ type PrivacyPolicyProps = {
 
 export default function PrivacyPolicy({ sections, footer, fullWidth }: PrivacyPolicyProps) {
   return (
-    <div className={`w-full ${fullWidth ? "w-screen" : ""} flex justify-center bg-white px-4 md:px-6 lg:px-8 py-10`}>
+    <div className={`w-full ${fullWidth ? "w-screen" : ""} flex justify-center bg-white`}>
       <div className={`w-full ${fullWidth ? "max-w-none" : "max-w-5xl"}`}>
         <Card className="shadow-sm">
           <Divider className="my-1" />
