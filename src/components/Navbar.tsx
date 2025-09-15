@@ -69,7 +69,7 @@ const Navbar = () => {
                 Insights
               </a>
               <a
-                href="#about"
+                href="/about"
                 className={`${getTextClasses()} px-3 py-2 text-sm font-medium transition-colors duration-200`}
               >
                 About
@@ -155,7 +155,7 @@ const Navbar = () => {
                 Insights
               </a>
               <a
-                href="#about"
+                href="/about"
                 className={`${getTextClasses()} block px-3 py-2 text-base font-medium`}
               >
                 About

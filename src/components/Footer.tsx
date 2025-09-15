@@ -19,8 +19,8 @@ const Footer = () => {
           <div className="md:col-span-1">
             <h3 className="text-lg font-semibold text-white mb-4">Company</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-white/80 hover:text-white transition-colors">About</a></li>
-              <li><a href="#" className="text-white/80 hover:text-white transition-colors">Careers</a></li>
+              <li><a href="/about" className="text-white/80 hover:text-white transition-colors">About</a></li>
+              <li><a href="/careers" className="text-white/80 hover:text-white transition-colors">Careers</a></li>
               <li><a href="#" className="text-white/80 hover:text-white transition-colors">Insights</a></li>
             </ul>
           </div>
@@ -64,7 +64,7 @@ const Footer = () => {
             {/* Legal Links */}
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-white/70 hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors">Privacy Policy</a>
+              <a href="/privacy-policy" className="text-white/70 hover:text-white transition-colors">Privacy Policy</a>
             </div>
 
             {/* Social Media Icons */}
