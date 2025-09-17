@@ -70,7 +70,7 @@ const Navbar = () => {
                 Platform
               </Link>
               <Link
-                href="#insights"
+                href="/insights"
                 className={`${getTextClasses()} px-3 py-2 text-sm font-medium transition-colors duration-200`}
               >
                 Insights
@@ -151,7 +151,7 @@ const Navbar = () => {
               Platform
             </Link>
             <Link
-              href="#insights"
+              href="/insights"
               className={`${getTextClasses()} block px-3 py-2 text-base font-medium transition-colors duration-200`}
               onClick={() => setIsMenuOpen(false)}
             >

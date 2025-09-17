@@ -127,7 +127,7 @@ export default function CareersPage() {
           </div>
 
           {/* Banner: No open roles right now + email */}
-          <div className="border-b py-6 border-black/50">
+          <div className="py-6">
             <div className="rounded-lg border border-black/50 p-8 text-sm text-black/80">
               <span className="font-bold">No open roles right now.</span>{" "}
               <br></br> But we’re always open to meeting people who think
