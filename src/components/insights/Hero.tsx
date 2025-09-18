@@ -42,7 +42,7 @@ const Hero = ({
           </div>
 
           <div>
-            <div className="text-sm text-gray-500 space-x-2">
+            <div className="text-sm text-gray-500 space-x-2 mt-6">
               <span>Blog</span>
               <span>•</span>
               <span>{tag}</span>
@@ -52,7 +52,7 @@ const Hero = ({
             <h2 className="mt-3 text-3xl md:text-4xl font-semibold leading-tight">
               {title}
             </h2>
-            <p className="mt-3 text-gray-600 leading-relaxed">{excerpt}</p>
+            <p className="mt-3 text-gray-600 text-sm">{excerpt}</p>
           </div>
         </div>
       </div>

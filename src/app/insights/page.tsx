@@ -7,7 +7,7 @@ import ContactForm from "@/components/insights/ContactForm";
 import { useNavbar } from "@/contexts/NavbarContext";
 import { useEffect, useState } from "react";
 
-const mock: InsightCard[] = Array.from({ length: 36 }).map((_, i) => ({
+const mock: InsightCard[] = Array.from({ length: 10 }).map((_, i) => ({
   id: String(i + 1),
   kind: i % 3 === 0 ? "article" : "blog",
   title:
@@ -34,7 +34,7 @@ export default function InsightsPage() {
         tag="Market Trends"
         date="September 5, 2025"
         title="Why Faster Lead Response is Becoming the New Currency in Real Estate"
-        excerpt="In today's real estate market, speed isn't just an advantage — it's the difference between closing a deal and losing one. This article explores why real-time engagement is reshaping buyer expectations."
+        excerpt="In today’s real estate market, speed isn’t just an advantage — it’s the difference between closing a deal and losing one. Research shows that inquiries left unanswered for even a few minutes see conversion rates drop sharply. For developers and agencies investing heavily in marketing, every second counts. This article explores why real-time engagement is reshaping buyer expectations, how AI is driving instant responses across channels, and what it means for growth teams competing in crowded property markets."
         imageSrc="/images/blog-image.png"
       />
 

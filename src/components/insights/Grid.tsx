@@ -36,8 +36,8 @@ type GridProps = {
 };
 
 const Grid = ({ source, active }: GridProps) => {
-  const [items, setItems] = useState<InsightCard[]>(source.slice(0, 12));
-  const [cursor, setCursor] = useState(12);
+  const [items, setItems] = useState<InsightCard[]>(source.slice(0, 10));
+  const [cursor, setCursor] = useState(10);
   const [hasMore, setHasMore] = useState(true);
   const sentinelRef = useRef<HTMLDivElement | null>(null);
 
@@ -47,9 +47,9 @@ const Grid = ({ source, active }: GridProps) => {
   });
 
   useEffect(() => {
-    setItems(filtered.slice(0, 12));
-    setCursor(12);
-    setHasMore(filtered.length > 12);
+    setItems(filtered.slice(0, 10));
+    setCursor(10);
+    setHasMore(filtered.length > 10);
   }, [active]);
 
   useEffect(() => {
@@ -69,7 +69,7 @@ const Grid = ({ source, active }: GridProps) => {
   }, [cursor, hasMore, filtered.length]);
 
   return (
-    <section className="bg-white text-black">
+    <section className="bg-[#F2F2F2] text-black">
       <div className="max-w-6xl mx-auto px-4 pb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {items.map((card) => (

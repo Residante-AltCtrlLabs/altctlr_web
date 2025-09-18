@@ -11,14 +11,12 @@ const Tabs = ({ counts, active, onChange }: TabsProps) => {
     "px-4 md:px-6 py-2 text-sm md:text-base rounded-full border transition-colors";
 
   return (
-    <div className="bg-white text-black">
+    <div className="bg-[#F2F2F2] text-black">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex items-center gap-4 py-6">
+        <div className="flex justify-center items-center gap-4 py-6">
           <button
             className={`${base} ${
-              active === "all"
-                ? "bg-black text-white border-black"
-                : "bg-white text-gray-700 border-gray-300 hover:border-black"
+              active === "all" ? " text-black bg-white" : "text-black"
             }`}
             onClick={() => onChange("all")}
           >
@@ -26,9 +24,7 @@ const Tabs = ({ counts, active, onChange }: TabsProps) => {
           </button>
           <button
             className={`${base} ${
-              active === "blogs"
-                ? "bg-black text-white border-black"
-                : "bg-white text-gray-700 border-gray-300 hover:border-black"
+              active === "blogs" ? "text-black bg-white" : "text-black"
             }`}
             onClick={() => onChange("blogs")}
           >
@@ -36,9 +32,7 @@ const Tabs = ({ counts, active, onChange }: TabsProps) => {
           </button>
           <button
             className={`${base} ${
-              active === "articles"
-                ? "bg-black text-white border-black"
-                : "bg-white text-gray-700 border-gray-300 hover:border-black"
+              active === "articles" ? "text-black bg-white" : "text-black"
             }`}
             onClick={() => onChange("articles")}
           >

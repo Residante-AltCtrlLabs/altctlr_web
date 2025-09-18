@@ -26,6 +26,11 @@ const ContactForm = () => {
           hear from you.
         </p>
 
+        <p className="text-gray-600 mt-4">
+          Our team reviews every message carefully. If it matters to you, it
+          matters to us.
+        </p>
+
         <form onSubmit={onSubmit} className="mt-10 space-y-4 text-left">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <input className={inputClass} placeholder="First Name *" required />
@@ -49,6 +54,10 @@ const ContactForm = () => {
             placeholder="Message *"
             required
           />
+          <p className="text-gray-600 mt-4 text-xs font-semibold">
+            Your information stays private. By submitting, you agree to receive
+            occasional updates from Altctrl.
+          </p>
           <div className="text-left">
             <button
               type="submit"
@@ -58,10 +67,6 @@ const ContactForm = () => {
               {submitting ? "Sending..." : "Send Message"}
             </button>
           </div>
-          <p className="text-[11px] text-gray-400">
-            Your information stays private. By submitting, you agree to receive
-            occasional updates from Altctrl.
-          </p>
         </form>
       </div>
     </section>

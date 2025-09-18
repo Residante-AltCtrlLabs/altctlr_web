@@ -14,7 +14,7 @@ const IndustrySection = () => {
           {/* Left: Image */}
           <div className="relative">
             <Image
-              src="/images/city-skyline.png"
+              src="/images/city-skyline2.png"
               alt="City skyline at night"
               fill
               className="object-cover rounded-3xl"
@@ -33,7 +33,7 @@ const IndustrySection = () => {
                 The Industry Already Sees It
               </h2>
 
-              <p className="text-lg lg:text-xl text-white/80 leading-relaxed">
+              <p className="text-md lg:text-md text-white/80 leading-relaxed">
                 McKinsey, BlackRock, and others agree: AI speed and automation
                 define the next era of real estate.
               </p>

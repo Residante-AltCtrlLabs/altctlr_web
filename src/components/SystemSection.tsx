@@ -34,7 +34,7 @@ const SystemSection = () => {
         {/* Two-column layout with wider right column */}
         <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-12 items-start">
           {/* LEFT COLUMN */}
-          <div className="space-y-8" style={{ marginTop: "65px" }}>
+          <div className="space-y-8" style={{ marginTop: "40px" }}>
             {/* Heading + Copy */}
             <div className="space-y-6">
               <h2 className="text-2xl md:text-4xl lg:text-4xl font-light leading-tight">
