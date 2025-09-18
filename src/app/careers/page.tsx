@@ -25,24 +25,28 @@ const bullets = [
 
 const jobs = [
   {
+    slug: "frontend-engineer-react-nextjs",
     title: "Frontend Engineer — React / Next.js",
     meta: "Engineering  •  Hybrid  •  Dubai, UAE  •  Full-time",
     about:
       "We’re looking for a frontend engineer who loves clean code and sharp design. Your work won’t just build screens — it will shape how the product works across the world.",
   },
   {
+    slug: "backend-engineer-node-python",
     title: "Backend Engineer — Node.js / Python",
     meta: "Engineering  •  Remote  •  Riyadh, KSA  •  Full-time",
     about:
       "Help power the invisible engine that runs our ecosystem. Build scalable services that make real-time responses possible — without a single lead slipping through the cracks.",
   },
   {
+    slug: "product-designer-saas-ai",
     title: "Product Designer — SaaS & AI Platforms",
     meta: "Design  •  Hybrid  •  Dubai, UAE  •  Full-time",
     about:
       "Design the systems behind the systems. Create interfaces that make automation feel human and effortless.",
   },
   {
+    slug: "design-intern-ui-visual",
     title: "Design Intern — UI/UX & Visual",
     meta: "Design  •  On-site  •  Riyadh, KSA  •  Internship",
     about:
@@ -143,6 +147,7 @@ export default function CareersPage() {
             {jobs.map((job, idx) => (
               <JobCard
                 key={idx}
+                slug={(job as any).slug}
                 title={job.title}
                 meta={job.meta}
                 about={job.about}
