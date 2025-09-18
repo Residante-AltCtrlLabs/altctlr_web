@@ -7,11 +7,15 @@ const Hero = () => {
       <div className="relative z-10 text-center  px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         {/* Main Headline */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl  text-white mb-8 leading-tight">
-          <div className="w-[82%] text-[32px]  ">The Future of</div>
-          <div className=" text-[57px] mt-3  ">Communications</div>
-          <div className="font-light  text-[57px] relative right-8">
+        <div className="w-[82%] text-[22px] lg:text-[32px]">
+            The Future of
+          </div>
+          <div className=" text-[32px] lg:text-[57px]">
+          <div className="  mt-3  ">Communications</div>
+          <div className="font-light  relative lg:right-8">
             {" "}
             & Collaborations.
+          </div>
           </div>
         </h1>
 
@@ -21,7 +25,7 @@ const Hero = () => {
         </p>
 
         {/* CTA Button */}
-        <button className="group bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+        <button className="group bg-[#6B6B6B] hover:bg-gray-700 text-white px-14 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
           <span className="flex items-center space-x-3">
             <span>Take Control</span>
             <svg

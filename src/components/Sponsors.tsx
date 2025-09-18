@@ -19,7 +19,8 @@ const Sponsors = () => {
     { name: "Stripe", logo: "💳" },
     { name: "Snowflake", logo: "❄️" },
     { name: "Alpha", logo: "α" },
-  ];
+    { name: "World-Class Infrastructure", logo: "🏙️" },  // Added for the branding below the logos
+];
 
   // Duplicate the array for seamless loop
   const duplicatedSponsors = [...sponsors, ...sponsors];
@@ -55,22 +56,15 @@ const Sponsors = () => {
           <Carousel
             value={duplicatedSponsors}
             itemTemplate={itemTemplate}
-            numVisible={5}
+            numVisible={6}
             numScroll={1}
             circular={true}
             autoplayInterval={3500}
              showNavigators={false}    
-            responsiveOptions={[
-              {
-                breakpoint: "1024px",
-                numVisible: 3,
-                numScroll: 1,
-              },
-              {
-                breakpoint: "600px",
-                numVisible: 1,
-                numScroll: 1,
-              },
+             responsiveOptions={[
+              { breakpoint: '1279px', numVisible: 4, numScroll: 1 }, // <1280px (lg): 4
+              { breakpoint: '1023px', numVisible: 2, numScroll: 1 }, // <1024px (md): 2
+              { breakpoint: '767px',  numVisible: 1, numScroll: 1 }, // <768px (sm): 1
             ]}
           />
         </div>

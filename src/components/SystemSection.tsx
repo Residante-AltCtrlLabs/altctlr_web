@@ -10,7 +10,7 @@ const Card = ({
   className?: string;
 }) => (
   <div
-    className={`rounded-2xl border border-[#353535] bg-white p-8 md:p-10 shadow-[0_1px_0_rgba(0,0,0,0.04)] ${className}`}
+    className={`rounded-2xl  border border-[#353535] bg-white p-8 md:p-10 shadow-[0_1px_0_rgba(0,0,0,0.04)] ${className}`}
   >
     {children}
   </div>
@@ -37,11 +37,11 @@ const SystemSection = () => {
           <div className="space-y-8" style={{ marginTop: "65px" }}>
             {/* Heading + Copy */}
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl lg:text-4xl font-light leading-tight">
+              <h2 className="text-2xl md:text-4xl lg:text-4xl font-light leading-tight">
                 The System That Works While
                 <br /> You Don’t See It.
               </h2>
-              <p className="text-xl leading-relaxed text-black/80">
+              <p className="text-lg md:text-xl leading-relaxed text-black/80">
                 AI that answers leads, scores intent, syncs <br></br> calendars,
                 and even surfaces hidden inventory — <br></br> all before your
                 team notices a thing.
@@ -49,7 +49,7 @@ const SystemSection = () => {
             </div>
 
             {/* Pocket Inventory card under the text */}
-            <Card>
+            <Card className="hidden lg:block">
               <div className="space-y-5">
                 <h3 className="text-2xl font-semibold">Pocket Inventory</h3>
                 <p className="text-sm text-black/70">
