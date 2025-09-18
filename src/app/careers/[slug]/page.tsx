@@ -3,6 +3,7 @@
 
 import { useNavbar } from "@/contexts/NavbarContext";
 import { useEffect } from "react";
+import { useParams } from "next/navigation";
 
 const content: Record<string, {title:string, meta:string, about:string, duties:string[], requirements:string[]}> = {
   "frontend-engineer-react-nextjs": {
@@ -47,10 +48,12 @@ const content: Record<string, {title:string, meta:string, about:string, duties:s
   }
 };
 
-export default function JobDetail({ params }: { params: { slug: string } }) {
+export default function JobDetail() {
   const { setNavbarStyle } = useNavbar();
   useEffect(() => { setNavbarStyle({ variant: "solid", textColor: "black" }); }, [setNavbarStyle]);
-  const job = content[params.slug] || content["frontend-engineer-react-nextjs"];
+  const p = useParams<{ slug: string | string[] }>();
+  const slug = Array.isArray(p?.slug) ? p.slug[0] : (p?.slug as string);
+  const job = content[slug] || content["frontend-engineer-react-nextjs"];
 
   return (
     <main className="bg-white text-black">
