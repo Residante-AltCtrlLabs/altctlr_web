@@ -5,14 +5,25 @@ import Image from "next/image";
 
 const IndustrySection = () => {
   return (
-    <section className="w-full bg-black text-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="w-full bg-black text-white relative">
+      {/* Background image for mobile/tablet */}
+      <div 
+        className="absolute inset-0 lg:hidden bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/images/city-skyline2.png)',
+        }}
+      >
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/60"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div
           className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px] lg:min-h-[600px] p-24
         "
         >
-          {/* Left: Image */}
-          <div className="relative">
+          {/* Left: Image - Hidden on mobile, shown on lg+ */}
+          <div className="relative hidden lg:block">
             <Image
               src="/images/city-skyline2.png"
               alt="City skyline at night"
@@ -27,7 +38,7 @@ const IndustrySection = () => {
           </div>
 
           {/* Right: Content */}
-          <div className="bg-black p-12 lg:p-16 flex flex-col justify-center ml-10">
+          <div className="bg-transparent lg:bg-black pt-12 lg:pt-16 flex flex-col justify-center ml-0 lg:ml-10">
             <div className="space-y-8">
               <h2 className="text-4xl lg:text-4xl font-semibold leading-tight">
                 The Industry Already Sees It
