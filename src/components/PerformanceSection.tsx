@@ -82,7 +82,7 @@ const PerformanceSection = () => {
 
         {/* Metrics */}
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-14 items-end">
-          <div className="text-center lg:text-left">
+          <div className="sm:text-left md:text-center lg:text-left">
             <CountUp
               to={40}
               suffix="%"
@@ -92,7 +92,7 @@ const PerformanceSection = () => {
               Faster Lead-To-Appointment Speed
             </p>
           </div>
-          <div className="text-center lg:text-left">
+          <div className="sm:text-left md:text-center lg:text-left">
             <CountUp
               to={3}
               suffix="x"
@@ -102,7 +102,7 @@ const PerformanceSection = () => {
               Higher Lead Engagement Rate
             </p>
           </div>
-          <div className="text-center lg:text-left">
+          <div className="sm:text-left md:text-center lg:text-left">
             <CountUp
               to={35}
               suffix="%"
@@ -112,7 +112,7 @@ const PerformanceSection = () => {
               Reduction In Operational Costs
             </p>
           </div>
-          <div className="text-center lg:text-left">
+          <div className="sm:text-left md:text-center lg:text-left">
             <CountUp
               to={99.9}
               decimals={1}

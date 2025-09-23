@@ -27,26 +27,26 @@ const FrictionSection = () => {
       <div className="flex flex-col items-center  mt-5  gap-y-4 max-w-[60%] mx-auto ">
         <div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl  text-black mb-8 leading-tight mt-6">
-            <div className=" text-[61px] mt-3">No Gaps.</div>
-            <div className="font-light pt-4  text-[61px]"> No Friction</div>
+            <div className=" text-[44px] lg:text-[61px] mt-3">No Gaps.</div>
+            <div className="font-light pt-4 text-[44px] lg:text-[61px]"> No Friction</div>
           </h1>
         </div>
         <p className=" text-black text-md">
           Every tool you use — unified into one seamless operating system.
         </p>
-        <div className="grid  w-[50%] mt-10  grid-cols-6 gap-y-10 text-[#2b2b2b]">
-          <FaSlack size={48} />
-          <FaGoogle size={48} />
-          <SiGmail size={48} />
-          <SiClickup size={48} />
-          <CgMonday size={48} />
-          <IoLogoWhatsapp size={48} />
-          <SiConvertio size={48} />
-          <FaLinkedin size={48} />
-          <FaInstagram size={48} />
-          <FaFacebook size={48} />
-          <FaTiktok size={48} />
-          <FaHubspot size={48} />
+        <div className="grid w-[75%] md:w-[60%] lg:w-[50%] mt-10  grid-cols-6 gap-y-10 text-[#2b2b2b]">
+          <FaSlack className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
+          <FaGoogle className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
+          <SiGmail className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
+          <SiClickup className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
+          <CgMonday className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
+          <IoLogoWhatsapp className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
+          <SiConvertio className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
+          <FaLinkedin className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
+          <FaInstagram className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
+          <FaFacebook className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
+          <FaTiktok className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
+          <FaHubspot className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
         </div>
         <p className=" text-black text-md pt-5">
           …and beyond — with new integrations added continuously.
