@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import { Button } from "primereact/button";
+import React, { useEffect, useState } from "react";
 
 const Card = ({
   children,
@@ -28,11 +29,75 @@ const Metric = ({ value, label }: { value: string; label: string }) => (
 );
 
 const SystemSection = () => {
+  const [isSmallSystemScreen, setIsSmallSystemScreen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallSystemScreen(window.innerWidth <= 1135);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Initialize on component mount
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const systemItems = [
+    {
+      title: "AI Outreach",
+      subtitle: "Every lead answered in under",
+      metricValue: "10",
+      metricLabel: "seconds",
+      description:
+        "No missed leads. AI engages instantly across WhatsApp, web forms, and partner feeds.",
+    },
+    {
+      title: "Smart Scheduling",
+      subtitle: "Timezones, conflicts, confirmations — handled.",
+      metricValue: "0",
+      metricLabel: "double-bookings",
+      description:
+        "Scheduling runs itself. Every slot synced, every calendar aligned.",
+    },
+    {
+      title: "Response Engine",
+      subtitle: "Every marketing ads deliver",
+      metricValue: "25%",
+      metricLabel: "higher roi",
+      description:
+        "Every campaign inquiry answered — ad spend that never goes to waste.",
+    },
+    {
+      title: "Pipeline Clarity",
+      subtitle: "From first contact to close — always",
+      metricValue: "100%",
+      metricLabel: "visibility",
+      description:
+        "Complete visibility across every step that matters. No lost context.",
+    },
+  ];
+
+  const totalSlides = systemItems.length;
+
+  const goPrev = () => {
+    setActiveIndex((prev) => Math.max(0, prev - 1));
+  };
+
+  const goNext = () => {
+    setActiveIndex((prev) => Math.min(totalSlides - 1, prev + 1));
+  };
   return (
     <section className="w-full bg-white text-black">
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-12 py-24 md:py-28">
         {/* Two-column layout with wider right column */}
-        <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-12 items-start">
+        <div
+          className={`grid ${
+            isSmallSystemScreen
+              ? "grid-cols-1 gap-8"
+              : "grid-cols-[0.9fr_1.1fr] gap-12"
+          } items-start`}
+        >
           {/* LEFT COLUMN */}
           <div className="space-y-8" style={{ marginTop: "40px" }}>
             {/* Heading + Copy */}
@@ -71,72 +136,67 @@ const SystemSection = () => {
             </Card>
           </div>
 
-          {/* RIGHT COLUMN: 2x2 grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
-            {/* AI Outreach */}
-            <Card className="p-6 md:p-7 min-h-[240px]">
-              <div className="space-y-4">
-                <h3 className="text-2xl font-semibold">AI Outreach</h3>
-                <p className="text-sm text-black/70">
-                  Every lead answered in under
-                </p>
-                <Metric value="10" label="seconds" />
-                <div className="h-px bg-black/10 my-3" />
-                <p className="text-sm text-black/70">
-                  No missed leads. AI engages instantly across WhatsApp, web
-                  forms, and partner feeds.
-                </p>
+          {/* RIGHT COLUMN */}
+          {isSmallSystemScreen ? (
+            <div className="flex flex-col gap-4">
+              <Card className="p-6 md:p-7 min-h-[240px]">
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-semibold">
+                    {systemItems[activeIndex].title}
+                  </h3>
+                  <p className="text-sm text-black/70">
+                    {systemItems[activeIndex].subtitle}
+                  </p>
+                  <Metric
+                    value={systemItems[activeIndex].metricValue}
+                    label={systemItems[activeIndex].metricLabel}
+                  />
+                  <div className="h-px bg-black/10 my-3" />
+                  <p className="text-sm text-black/70">
+                    {systemItems[activeIndex].description}
+                  </p>
+                </div>
+              </Card>
+              <div className="flex items-center justify-between">
+                <div className="flex-1 h-1 bg-black/10 rounded-full mr-4">
+                  <div
+                    className="h-1 bg-black rounded-full transition-all"
+                    style={{
+                      width: `${((activeIndex + 1) / totalSlides) * 100}%`,
+                    }}
+                  />
+                </div>
+                <div className="flex justify-end gap-2">
+                  <Button
+                    onClick={goPrev}
+                    icon="pi pi-arrow-left"
+                    className="bg-white border text-black py-2"
+                    disabled={activeIndex === 0}
+                  />
+                  <Button
+                    onClick={goNext}
+                    icon="pi pi-arrow-right"
+                    className="bg-white border text-black py-2"
+                    disabled={activeIndex === totalSlides - 1}
+                  />
+                </div>
               </div>
-            </Card>
-
-            {/* Smart Scheduling */}
-            <Card className="p-6 md:p-7 min-h-[240px]">
-              <div className="space-y-4">
-                <h3 className="text-2xl font-semibold">Smart Scheduling</h3>
-                <p className="text-sm text-black/70">
-                  Timezones, conflicts, confirmations — handled.
-                </p>
-                <Metric value="0" label="double-bookings" />
-                <div className="h-px bg-black/10 my-3" />
-                <p className="text-sm text-black/70">
-                  Scheduling runs itself. Every slot synced, every calendar
-                  aligned.
-                </p>
-              </div>
-            </Card>
-
-            {/* Response Engine */}
-            <Card className="p-6 md:p-7 min-h-[240px]">
-              <div className="space-y-4">
-                <h3 className="text-2xl font-semibold">Response Engine</h3>
-                <p className="text-sm text-black/70">
-                  Every marketing ads deliver
-                </p>
-                <Metric value="25%" label="higher roi" />
-                <div className="h-px bg-black/10 my-3" />
-                <p className="text-sm text-black/70">
-                  Every campaign inquiry answered — ad spend that never goes to
-                  waste.
-                </p>
-              </div>
-            </Card>
-
-            {/* Pipeline Clarity */}
-            <Card className="p-6 md:p-7 min-h-[240px]">
-              <div className="space-y-4">
-                <h3 className="text-2xl font-semibold">Pipeline Clarity</h3>
-                <p className="text-sm text-black/70">
-                  From first contact to close — always
-                </p>
-                <Metric value="100%" label="visibility" />
-                <div className="h-px bg-black/10 my-3" />
-                <p className="text-sm text-black/70">
-                  Complete visibility across every step that matters. No lost
-                  context.
-                </p>
-              </div>
-            </Card>
-          </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
+              {systemItems.map((item) => (
+                <Card key={item.title} className="p-6 md:p-7 min-h-[240px]">
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-semibold">{item.title}</h3>
+                    <p className="text-sm text-black/70">{item.subtitle}</p>
+                    <Metric value={item.metricValue} label={item.metricLabel} />
+                    <div className="h-px bg-black/10 my-3" />
+                    <p className="text-sm text-black/70">{item.description}</p>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>
