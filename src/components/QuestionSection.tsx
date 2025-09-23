@@ -29,15 +29,15 @@ const QuestionSection = () => {
       <div className="flex flex-col items-center  mt-5  gap-y-4 max-w-[60%] mx-auto ">
         <div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl   text-black mb-8 leading-tight mt-6">
-            <div className=" text-[61px] mt-3  ">Your Questions,</div>
-            <div className="font-light pt-1 text-center  text-[61px]">
+            <div className="md:text-[44px] lg:text-[61px] mt-3  ">Your Questions,</div>
+            <div className="font-light pt-1 text-center  md:text-[44px] lg:text-[61px]">
               {" "}
               Answered.
             </div>
           </h1>
         </div>
         <p className=" text-black text-md">Everything you need to know.</p>
-        <Accordion className=" w-[80%] space-y-3 text-black !font-medium mt-10">
+        <Accordion className=" w-[100%] lg:w-[80%] space-y-3 text-black !font-medium mt-10">
           <AccordionTab header="How does Alternative Control actually capture and respond to leads?">
             <p className="m-0">
               Alternative Control uses advanced AI algorithms to automatically
