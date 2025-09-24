@@ -2,40 +2,66 @@
 
 import React from "react";
 import { Carousel } from "primereact/carousel";
+import useWindowSize from "@/hooks/useWindowSize";
 
 const BackedBySection = () => {
   // Company data for carousel
+  const isSmallScreen = useWindowSize(950);
   const companies = [
     {
       id: 1,
       name: "Deloitte.",
-      quote: "Conversational AI will become a key differentiator in real estate, enabling faster response times, personalized experiences, and scalable client service without increasing headcount.",
-      source: "Deloitte, Conversational AI in Real Estate Customer Services (2024)"
+      quote:
+        "Conversational AI will become a key differentiator in real estate, enabling faster response times, personalized experiences, and scalable client service without increasing headcount.",
+      source:
+        "Deloitte, Conversational AI in Real Estate Customer Services (2024)",
     },
     {
       id: 2,
       name: "McKinsey & Company",
-      quote: "In our own work with AI, real estate companies have gained over 10% in net operating income — through efficiency, better customer experience, tenant retention, smarter asset selection.",
-      source: "McKinsey & Company, Real Estate Insights (2023)"
+      quote:
+        "In our own work with AI, real estate companies have gained over 10% in net operating income — through efficiency, better customer experience, tenant retention, smarter asset selection.",
+      source: "McKinsey & Company, Real Estate Insights (2023)",
     },
     {
       id: 3,
       name: "BlackRock®",
-      quote: "AI is transforming real estate investing by automating tasks, optimizing operations, and creating new investment opportunities.",
-      source: "BlackRock, Institutional Insights (2024)"
+      quote:
+        "AI is transforming real estate investing by automating tasks, optimizing operations, and creating new investment opportunities.",
+      source: "BlackRock, Institutional Insights (2024)",
     },
     {
       id: 4,
       name: "pwc",
-      quote: "Top performing companies are moving from chasing AI use cases to building AI capabilities that fulfill business strategy.",
-      source: "Dan Priest, PwC US Chief AI Officer"
-    }
+      quote:
+        "Top performing companies are moving from chasing AI use cases to building AI capabilities that fulfill business strategy.",
+      source: "Dan Priest, PwC US Chief AI Officer",
+    },
   ];
 
-  const companyTemplate = (company: typeof companies[0]) => {
+  const responsiveOptions = [
+    {
+      breakpoint: "950px",
+      numVisible: 1,
+      numScroll: 1,
+    },
+    {
+      breakpoint: "3000px",
+      numVisible: 3,
+      numScroll: 1,
+    },
+  ];
+
+  const companyTemplate = (company: (typeof companies)[0]) => {
     return (
       <div className="space-y-4 p-4">
-        <h3 className={`text-5xl font-bold ${company.name === "McKinsey & Company" ? "font-serif font-semibold" : ""}`}>
+        <h3
+          className={`text-5xl font-bold ${
+            company.name === "McKinsey & Company"
+              ? "font-serif font-semibold"
+              : ""
+          }`}
+        >
           {company.name === "pwc" ? (
             <span className="relative">
               p
@@ -49,9 +75,7 @@ const BackedBySection = () => {
         <blockquote className="text-sm leading-relaxed text-white/90">
           "{company.quote}"
         </blockquote>
-        <p className="text-xs text-white/70">
-          — {company.source}
-        </p>
+        <p className="text-xs text-white/70">— {company.source}</p>
       </div>
     );
   };
@@ -69,17 +93,19 @@ const BackedBySection = () => {
           <Carousel
             value={companies}
             itemTemplate={companyTemplate}
-            numVisible={3}
+            key={isSmallScreen ? "mobile" : "desktop"}
+            numVisible={isSmallScreen ? 1 : 3}
             numScroll={1}
             circular={true}
             autoplayInterval={4000}
             showIndicators={false}
             showNavigators={false}
+            responsiveOptions={responsiveOptions}
             className="custom-carousel"
             pt={{
               content: {
-                className: "bg-transparent"
-              }
+                className: "bg-transparent",
+              },
             }}
           />
         </div>

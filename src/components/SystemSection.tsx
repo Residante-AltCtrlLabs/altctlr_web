@@ -1,5 +1,6 @@
 "use client";
 
+import useWindowSize from "@/hooks/useWindowSize";
 import { Button } from "primereact/button";
 import React, { useEffect, useState } from "react";
 
@@ -29,19 +30,8 @@ const Metric = ({ value, label }: { value: string; label: string }) => (
 );
 
 const SystemSection = () => {
-  const [isSmallSystemScreen, setIsSmallSystemScreen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallSystemScreen(window.innerWidth <= 1135);
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize(); // Initialize on component mount
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const isSmallScreen = useWindowSize(1135);
 
   const systemItems = [
     {
@@ -93,7 +83,7 @@ const SystemSection = () => {
         {/* Two-column layout with wider right column */}
         <div
           className={`grid ${
-            isSmallSystemScreen
+            isSmallScreen
               ? "grid-cols-1 gap-8"
               : "grid-cols-[0.9fr_1.1fr] gap-12"
           } items-start`}
@@ -137,7 +127,7 @@ const SystemSection = () => {
           </div>
 
           {/* RIGHT COLUMN */}
-          {isSmallSystemScreen ? (
+          {isSmallScreen ? (
             <div className="flex flex-col gap-4">
               <Card className="p-6 md:p-7 min-h-[240px]">
                 <div className="space-y-4">
