@@ -60,7 +60,7 @@ const EngineSection = () => {
     if (isHero) {
       return (
         <div className="px-2 ">
-          <div className="bg-white text-[#0f172a] pt-12 pb-12  h-[287px] w-[578px] rounded-3xl shadow-2xl">
+          <div className="bg-white text-[#0f172a] pt-12 pb-12  h-[287px] w-[486px] rounded-3xl shadow-2xl">
             <div className="px-6 pt-6  h-full  flex flex-col justify-between ">
               <div className="text-xl mb-5">
                 <i className={it.icon}></i>
