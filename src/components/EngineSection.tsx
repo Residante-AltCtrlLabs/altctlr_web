@@ -16,11 +16,6 @@ const EngineSection = () => {
     { icon: "pi pi-chart-line", title: "Lead Scoring Engine" },
     { icon: "pi pi-share-alt", title: "Multi-Channel Engagement" },
     { icon: "pi pi-chart-bar", title: "Analytics That Prove ROI" },
-    { icon: "pi pi-share-alt", title: "Multi-Channel Engagement" },
-    { icon: "pi pi-share-alt", title: "Multi-Channel Engagement" },
-    { icon: "pi pi-share-alt", title: "Multi-Channel Engagement" },
-    { icon: "pi pi-share-alt", title: "Multi-Channel Engagement" },
-    { icon: "pi pi-share-alt", title: "Multi-Channel Engagement" },
   ];
 
   // idx inject so we can style first item via idx
@@ -30,7 +25,18 @@ const EngineSection = () => {
   const numVisible = 5;
   const numScroll = 1;
   const circular = false;
-
+  const responsiveOptions = [
+    {
+      breakpoint: "950px",
+      numVisible: 2,
+      numScroll: 1,
+    },
+    {
+      breakpoint: "3000px",
+      numVisible: 7,
+      numScroll: 1,
+    },
+  ];
   const [page, setPage] = useState(0);
 
   const totalPages = useMemo(() => {
@@ -108,7 +114,7 @@ const EngineSection = () => {
       </div>
 
       {/* Image/slider block */}
-      <div className="relative w-[84%] rounded-lg mx-auto overflow-hidden">
+      <div className="relative w-[95%] rounded-lg mx-auto overflow-hidden">
         {/* Background image with reduced opacity */}
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -131,6 +137,7 @@ const EngineSection = () => {
             <Carousel
               value={items}
               itemTemplate={itemTemplate}
+              responsiveOptions={responsiveOptions}
               numVisible={numVisible}
               numScroll={numScroll}
               circular={circular}
