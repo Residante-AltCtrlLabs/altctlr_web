@@ -87,7 +87,8 @@ const Navbar = () => {
           {/* Sign In Button */}
           <div className="hidden md:block">
             <Link
-              href="#signin"
+              href="https://agent.altctrl.ai/login"
+              target="_blank"
               className={`${getTextClasses()} px-4 py-2 text-sm font-medium transition-colors duration-200`}
             >
               Sign In
@@ -172,7 +173,8 @@ const Navbar = () => {
               Careers
             </Link>
             <Link
-              href="#signin"
+              href="https://agent.altctrl.ai/login"
+              target="_blank"
               className={`${getTextClasses()} block px-3 py-2 text-base font-medium transition-colors duration-200`}
               onClick={() => setIsMenuOpen(false)}
             >
