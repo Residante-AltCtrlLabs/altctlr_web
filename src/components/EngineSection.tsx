@@ -37,10 +37,10 @@ const EngineSection = () => {
 
   // idx inject so we can style first item via idx
   const items = base.map((it, idx) => ({ ...it, idx }));
-  // const isSmallScreen = useWindowSize(1795);
+  const isSmallScreen = useWindowSize(1795);
   const isMobileHero = useWindowSize(1024);
   // --- Fixed carousel config ---
-  const numVisible = window && window.innerWidth <= 1795 ? 1 : 7;
+  const numVisible = isSmallScreen ? 1 : 7;
   const numScroll = 1;
   const circular = false;
   const responsiveOptions = [
@@ -92,7 +92,7 @@ const EngineSection = () => {
 
     if (isHero || isMobileHero) {
       return (
-        <div className="px-2  flex justify-center ">
+        <div className="px-2">
           <div className="bg-white text-[#0f172a] pt-12 pb-12  h-[287px] w-[430px] md:w-[486px] rounded-3xl shadow-2xl">
             <div className="px-6 pt-6  h-full  flex flex-col justify-between ">
               <div className="text-xl mb-5">
