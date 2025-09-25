@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { Carousel } from "primereact/carousel";
 import { Button } from "primereact/button";
+import useWindowSize from "@/hooks/useWindowSize";
 
 const EngineSection = () => {
   // --- Base items (same as your list) ---
@@ -12,28 +13,55 @@ const EngineSection = () => {
       title: "Workflow Automation",
       desc: "Tasks created and routed automatically — no manual chasing.",
     }, // hero (idx 0)
-    { icon: "pi pi-calendar", title: "AI Auto-Scheduling" },
-    { icon: "pi pi-chart-line", title: "Lead Scoring Engine" },
-    { icon: "pi pi-share-alt", title: "Multi-Channel Engagement" },
-    { icon: "pi pi-chart-bar", title: "Analytics That Prove ROI" },
+    {
+      icon: "pi pi-calendar",
+      title: "AI Auto-Scheduling",
+      desc: "Every calendar synced, every slot aligned — zero conflicts.",
+    },
+    {
+      icon: "pi pi-chart-line",
+      title: "Lead Scoring Engine",
+      desc: "Tasks created and routed automatically — no manual chasing.",
+    },
+    {
+      icon: "pi pi-share-alt",
+      title: "Multi-Channel Engagement",
+      desc: "Conversations unified across channels — always on, always consistent.",
+    },
+    {
+      icon: "pi pi-chart-bar",
+      title: "Analytics That Prove ROI",
+      desc: "Every action tracked, every result measured — impact made visible.",
+    },
   ];
 
   // idx inject so we can style first item via idx
   const items = base.map((it, idx) => ({ ...it, idx }));
-
+  // const isSmallScreen = useWindowSize(1795);
+  const isMobileHero = useWindowSize(1024);
   // --- Fixed carousel config ---
-  const numVisible = 5;
+  const numVisible = window.innerWidth <= 1795 ? 1 : 7;
   const numScroll = 1;
   const circular = false;
   const responsiveOptions = [
     {
-      breakpoint: "950px",
-      numVisible: 2,
+      breakpoint: "3000px",
+      numVisible: 7,
       numScroll: 1,
     },
     {
-      breakpoint: "3000px",
-      numVisible: 7,
+      breakpoint: "1795px",
+      numVisible: 4,
+      numScroll: 1,
+    },
+    {
+      breakpoint: "1450px",
+      numVisible: 3,
+      numScroll: 1,
+    },
+    {
+      breakpoint: "1024px",
+      numVisible: 1,
       numScroll: 1,
     },
   ];
@@ -57,9 +85,9 @@ const EngineSection = () => {
   const itemTemplate = (it: any) => {
     const isHero = it.idx === 0;
 
-    if (isHero) {
+    if (isHero || isMobileHero) {
       return (
-        <div className="px-2 ">
+        <div className="px-2  flex justify-center ">
           <div className="bg-white text-[#0f172a] pt-12 pb-12  h-[287px] w-[486px] rounded-3xl shadow-2xl">
             <div className="px-6 pt-6  h-full  flex flex-col justify-between ">
               <div className="text-xl mb-5">
@@ -137,6 +165,7 @@ const EngineSection = () => {
             <Carousel
               value={items}
               itemTemplate={itemTemplate}
+              key={isMobileHero ? "mobile" : "desktop"}
               responsiveOptions={responsiveOptions}
               numVisible={numVisible}
               numScroll={numScroll}
@@ -145,6 +174,7 @@ const EngineSection = () => {
               onPageChange={(e) => setPage(e.page)}
               showNavigators={false}
               showIndicators={false}
+              // autoplayInterval={window.innerWidth <= 1024 ? 3000 : 0}
             />
           </div>
 
@@ -154,13 +184,13 @@ const EngineSection = () => {
               onClick={goPrev}
               icon="pi pi-arrow-left"
               className="bg-white text-black py-2"
-              disabled={totalPages <= 1}
+              // disabled={totalPages <= 1}
             />
             <Button
               onClick={goNext}
               icon="pi pi-arrow-right"
               className="bg-white text-black py-2"
-              disabled={totalPages <= 1}
+              // disabled={!isSmallScreen && totalPages <= 1}
             />
           </div>
         </div>
