@@ -28,14 +28,17 @@ const FrictionSection = () => {
         <div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl  text-black mb-8 leading-tight mt-6">
             <div className=" text-[44px] lg:text-[61px] mt-3">No Gaps.</div>
-            <div className="font-light pt-4 text-[44px] lg:text-[61px]"> No Friction</div>
+            <div className="font-light pt-4 text-[44px] lg:text-[61px]">
+              {" "}
+              No Friction
+            </div>
           </h1>
         </div>
         <p className=" text-black text-md">
           Every tool you use — unified into one seamless operating system.
         </p>
         <div className="grid w-[75%] md:w-[60%] lg:w-[50%] mt-10  grid-cols-6 gap-y-10 text-[#2b2b2b]">
-          <FaSlack className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
+          {/* <FaSlack className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
           <FaGoogle className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
           <SiGmail className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
           <SiClickup className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
@@ -46,7 +49,19 @@ const FrictionSection = () => {
           <FaInstagram className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
           <FaFacebook className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
           <FaTiktok className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
-          <FaHubspot className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
+          <FaHubspot className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" /> */}
+          <img src="/images/slack.png" alt="slack" width={40} />
+          <img src="/images/google.png" alt="slack" width={40} />
+          <img src="/images/clickup.png" alt="slack" width={40} />
+          <img src="/images/gmail.png" alt="slack" width={40} />
+          <img src="/images/monday.png" alt="slack" width={40} />
+          <img src="/images/wp.png" alt="slack" width={40} />
+          <img src="/images/insta.png" alt="slack" width={40} />
+          <img src="/images/fb.png" alt="slack" width={40} />
+          <img src="/images/linkedin.png" alt="slack" width={40} />
+          <img src="/images/tiktok.png" alt="slack" width={40} />
+          <img src="/images/calendly.png" alt="slack" width={40} />
+          <img src="/images/hubspot.png" alt="slack" width={40} />
         </div>
         <p className=" text-black text-md pt-5">
           …and beyond — with new integrations added continuously.
