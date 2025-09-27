@@ -11,16 +11,16 @@ const Sponsors = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Sponsor logos data - you can replace these with actual logos
+  // Sponsor logos data with actual SVG images
   const sponsors = [
-    { name: "OpenAI", logo: "🤖" },
-    { name: "AWS", logo: "☁️" },
-    { name: "Microsoft", logo: "🪟" },
-    { name: "Stripe", logo: "💳" },
-    { name: "Snowflake", logo: "❄️" },
-    { name: "Alpha", logo: "α" },
-    { name: "World-Class Infrastructure", logo: "🏙️" },  // Added for the branding below the logos
-];
+    { name: "OpenAI", logo: "/images/openai.svg" },
+    { name: "AWS", logo: "/images/aws.svg" },
+    { name: "Claude", logo: "/images/claude.svg" },
+    { name: "Stripe", logo: "/images/stripe.svg" },
+    { name: "DeepSeek", logo: "/images/deepseek.svg" },
+    { name: "Misterial", logo: "/images/misterial.svg" },
+    { name: "Meta", logo: "/images/meta-line.svg" },
+  ];
 
   // Duplicate the array for seamless loop
   const duplicatedSponsors = [...sponsors, ...sponsors];
@@ -30,8 +30,12 @@ const Sponsors = () => {
     return (
       <div className="flex-shrink-0 mx-8 flex items-center justify-center">
         <div className="text-white/60 hover:text-white transition-colors duration-300 group">
-          <div className="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">
-            {sponsor.logo}
+          <div className="h-12 w-20 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+            <img
+              src={sponsor.logo}
+              alt={sponsor.name}
+              className="h-8 w-auto filter brightness-0 invert opacity-1 group-hover:opacity-100 transition-opacity duration-300"
+            />
           </div>
           <div className="text-sm font-medium text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             {sponsor.name}
@@ -60,11 +64,11 @@ const Sponsors = () => {
             numScroll={1}
             circular={true}
             autoplayInterval={3500}
-             showNavigators={false}    
-             responsiveOptions={[
-              { breakpoint: '1279px', numVisible: 4, numScroll: 1 }, // <1280px (lg): 4
-              { breakpoint: '1023px', numVisible: 2, numScroll: 1 }, // <1024px (md): 2
-              { breakpoint: '767px',  numVisible: 1, numScroll: 1 }, // <768px (sm): 1
+            showNavigators={false}
+            responsiveOptions={[
+              { breakpoint: "1279px", numVisible: 4, numScroll: 1 }, // <1280px (lg): 4
+              { breakpoint: "1023px", numVisible: 2, numScroll: 1 }, // <1024px (md): 2
+              { breakpoint: "767px", numVisible: 1, numScroll: 1 }, // <768px (sm): 1
             ]}
           />
         </div>
